@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# irochi1184.github.io
 
-## Getting Started
+有田 健一郎 のポートフォリオサイト（新人研修講師 / エンジニア）。
 
-First, run the development server:
+Next.js（App Router）で構築し、静的エクスポートして **GitHub Pages** で公開しています。
+
+## 技術構成
+
+- Next.js 16（App Router / `output: "export"` による静的エクスポート）
+- React 19 / TypeScript
+- Tailwind CSS v4
+- Noto Sans JP（`next/font`）
+
+## 開発
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000 で確認
+npm run build    # out/ に静的ファイルを生成
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## コンテンツの編集
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+サイトの文言・研修メニュー・実績・連絡先は **`src/data/site.ts`** に集約しています。
+基本的にこのファイルだけを編集すれば内容を更新できます。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `site.contact.email` … メールアドレスを設定すると「メールで相談する」ボタンが表示されます（空の場合は非表示）。
+- `services` … 研修メニューのカード
+- `skillGroups` … 技術スタックのバッジ
+- `works` … 開発実績
 
-## Learn More
+## デプロイ
 
-To learn more about Next.js, take a look at the following resources:
+`main` ブランチへ push すると、GitHub Actions（`.github/workflows/deploy.yml`）が
+自動でビルドし GitHub Pages へデプロイします。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+初回のみ GitHub リポジトリの **Settings → Pages → Build and deployment → Source** を
+**「GitHub Actions」** に設定してください。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+公開URL: https://irochi1184.github.io/
