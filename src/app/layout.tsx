@@ -13,7 +13,7 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: `${site.name} | 新人研修・Java研修講師`,
-  description: site.intro,
+  description: site.lead,
   keywords: [
     "新人研修",
     "Java研修",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   authors: [{ name: site.name }],
   openGraph: {
     title: `${site.name} | 新人研修・Java研修講師`,
-    description: site.tagline,
+    description: site.tagline.join(""),
     type: "website",
     locale: "ja_JP",
   },
