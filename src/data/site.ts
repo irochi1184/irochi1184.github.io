@@ -2,7 +2,9 @@
 // 文言・実績・連絡先を変えたい場合は基本ここだけを編集すればよい。
 
 export const site = {
+  url: "https://irochi1184.github.io",
   name: "有田 健一郎",
+  nameNoSpace: "有田健一郎",
   nameEn: "Kenichiro Arita",
   role: "新人研修講師 / エンジニア",
   tagline: ["企業の新人を、", "戦力になる", "エンジニアへ。"],

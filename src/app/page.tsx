@@ -28,10 +28,13 @@ export default function Home() {
             <Reveal delay={0.1}>
               <Eyebrow>About</Eyebrow>
               <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">
-                未経験を、現場へ。
+                {site.name}
+                <span className="ml-3 align-middle text-base font-medium text-muted">
+                  {site.nameEn}
+                </span>
               </h2>
               <p className="mt-4 max-w-xl leading-relaxed text-muted">
-                個人事業主として企業の新人研修を専門に活動。Java を軸に、IT 基礎からインフラまで、現場感のある実践指導を行っています。
+                {site.name}（{site.nameEn}）です。個人事業主として企業の新人研修を専門に活動。Java を軸に、IT 基礎からインフラまで、現場感のある実践指導を行っています。
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {["オンライン / オンサイト", "カリキュラム設計", "演習中心", "未経験者対応"].map(
