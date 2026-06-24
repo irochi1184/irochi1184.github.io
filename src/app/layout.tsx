@@ -56,11 +56,20 @@ export const metadata: Metadata = {
     siteName: site.name,
     type: "website",
     locale: "ja_JP",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${site.name}｜新人研修・Java研修講師`,
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: titleText,
     description: descriptionText,
+    images: ["/og.png"],
   },
 };
 
