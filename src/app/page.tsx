@@ -149,9 +149,15 @@ export default function Home() {
                     {/* アプリのモック風ビジュアル */}
                     <div className="relative flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 to-indigo-900">
                       <div className="dot-grid absolute inset-0 opacity-20" />
-                      <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl bg-white/10 text-2xl font-black text-white backdrop-blur transition-transform duration-500 group-hover:scale-110">
-                        ¥
-                      </div>
+                      {w.image && (
+                        <img
+                          src={w.image}
+                          alt={`${w.title} アプリアイコン`}
+                          width={96}
+                          height={96}
+                          className="relative h-24 w-24 rounded-[22px] bg-white shadow-2xl ring-1 ring-white/20 transition-transform duration-500 group-hover:scale-110"
+                        />
+                      )}
                     </div>
                     <div className="flex flex-1 flex-col p-6">
                       <p className="text-xs font-bold uppercase tracking-wide text-accent">

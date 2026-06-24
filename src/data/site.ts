@@ -91,6 +91,7 @@ export const works = [
     type: "iOS アプリ / 個人開発",
     description: "SwiftUI 製の家計簿アプリ。CloudKit 共有・レシート OCR・課金を実装し App Store で運用中。",
     tags: ["Swift", "SwiftUI", "CloudKit"],
+    image: "/kakebo-icon.png",
     link: "https://apps.apple.com/us/app/kakebo-%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E5%AE%B6%E8%A8%88%E7%B0%BF-%E6%94%AF%E5%87%BA%E7%AE%A1%E7%90%86%E3%82%A2%E3%83%97%E3%83%AA/id6754249349",
     linkLabel: "App Store で見る",
   },
