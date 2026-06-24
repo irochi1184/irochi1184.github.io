@@ -3,6 +3,9 @@
 
 export const site = {
   url: "https://irochi1184.github.io",
+  // Google Search Console の所有権確認コード（HTMLタグ方式の content の値）。
+  // 取得したらここに貼ると <meta name="google-site-verification"> が出力される。
+  googleVerification: "",
   name: "有田 健一郎",
   nameNoSpace: "有田健一郎",
   nameEn: "Kenichiro Arita",

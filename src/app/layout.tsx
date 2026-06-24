@@ -45,6 +45,10 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   alternates: { canonical: "/" },
+  // Search Console の所有権確認（site.googleVerification にコードを入れると出力される）
+  ...(site.googleVerification
+    ? { verification: { google: site.googleVerification } }
+    : {}),
   openGraph: {
     title: titleText,
     description: descriptionText,
