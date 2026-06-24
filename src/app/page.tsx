@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
-import { serviceIcons, GithubIcon, MailIcon, ArrowIcon } from "@/components/Icons";
+import { serviceIcons, GithubIcon, MailIcon, ArrowIcon, AppleIcon } from "@/components/Icons";
 import { site, services, skillGroups, works } from "@/data/site";
 
 export default function Home() {
@@ -173,6 +173,18 @@ export default function Home() {
                           </span>
                         ))}
                       </div>
+                      {w.link && (
+                        <a
+                          href={w.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-accent hover:gap-3"
+                        >
+                          <AppleIcon />
+                          {w.linkLabel ?? "App Store で見る"}
+                          <ArrowIcon />
+                        </a>
+                      )}
                     </div>
                   </article>
                 </StaggerItem>

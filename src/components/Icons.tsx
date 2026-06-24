@@ -100,6 +100,14 @@ export function MailIcon(p: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function AppleIcon(p: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" width={16} height={16} fill="currentColor" {...p}>
+      <path d="M16.36 12.78c.02 2.5 2.2 3.33 2.22 3.34-.02.06-.35 1.2-1.15 2.37-.69 1.02-1.41 2.03-2.55 2.05-1.12.02-1.48-.66-2.76-.66s-1.68.64-2.74.68c-1.1.04-1.93-1.1-2.63-2.11-1.42-2.06-2.51-5.83-1.05-8.38.72-1.26 2.02-2.06 3.42-2.08 1.08-.02 2.1.73 2.76.73.66 0 1.9-.9 3.2-.77.54.02 2.07.22 3.05 1.65-.08.05-1.82 1.07-1.8 3.19M14.28 5.4c.59-.71.99-1.7.88-2.69-.85.04-1.88.57-2.49 1.28-.55.63-1.03 1.64-.9 2.61.95.07 1.92-.48 2.51-1.2" />
+    </svg>
+  );
+}
+
 export function ArrowIcon(p: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" width={16} height={16} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...p}>
