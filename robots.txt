@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://irochi1184.github.io/irochi-portfolio/sitemap.xml
