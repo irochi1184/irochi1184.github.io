@@ -3,7 +3,6 @@ import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
 
-// 日本語サイトのため Noto Sans JP を利用
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
@@ -11,9 +10,8 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap",
 });
 
-const titleText = `${site.name}（${site.nameEn}）| 新人研修・Java研修講師`;
-// 検索で名前がヒットしやすいよう、説明文に氏名（スペース有無の両方）を明記
-const descriptionText = `${site.nameNoSpace}（${site.name}）の公式サイト。個人事業主として企業の新人研修を専門に、Java を中心に IT 基礎・Web アプリ開発・インフラまで実践的に指導しています。`;
+const titleText = `${site.name}（${site.nameEn}）| IT研修講師・エンジニア・iOSアプリ開発`;
+const descriptionText = `${site.nameNoSpace}（${site.name}）のポートフォリオ。企業向けIT研修でJava・Web開発・クラウド・生成AIを担当し、個人ではSwiftUIでiOSアプリを開発してApp Storeで公開しています。`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -23,29 +21,27 @@ export const metadata: Metadata = {
     "有田健一郎",
     "有田 健一郎",
     "Kenichiro Arita",
+    "IT研修講師",
     "新人研修",
     "Java研修",
-    "研修講師",
     "Spring Boot",
-    "PHP",
-    "Laravel",
-    "Docker",
+    "生成AI研修",
     "AWS",
-    "Linux",
+    "Docker",
     "MySQL",
+    "SwiftUI",
+    "iOSアプリ開発",
+    "App Store",
     "エンジニア育成",
-    "個人事業主",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
-  // 検索エンジンにインデックス・リンク追跡を許可
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   alternates: { canonical: "/" },
-  // Search Console の所有権確認（site.googleVerification にコードを入れると出力される）
   ...(site.googleVerification
     ? { verification: { google: site.googleVerification } }
     : {}),
@@ -61,7 +57,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${site.name}｜新人研修・Java研修講師`,
+        alt: `${site.name}｜IT研修講師・エンジニア・iOSアプリ開発`,
       },
     ],
   },
@@ -73,25 +69,26 @@ export const metadata: Metadata = {
   },
 };
 
-// 構造化データ（Person）：Google に「有田健一郎という人物のサイト」と伝える
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: site.nameNoSpace,
   alternateName: [site.name, site.nameEn],
   url: site.url,
-  jobTitle: "新人研修講師 / エンジニア",
+  jobTitle: "IT研修講師 / エンジニア / iOSアプリ開発",
   description: descriptionText,
   sameAs: [site.contact.github].filter(Boolean),
   knowsAbout: [
     "Java",
     "Spring Boot",
-    "PHP",
-    "Laravel",
-    "Docker",
+    "生成AI",
     "AWS",
+    "Docker",
     "Linux",
     "MySQL",
+    "Swift",
+    "SwiftUI",
+    "WidgetKit",
     "新人研修",
     "エンジニア育成",
   ],

@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
-/* カラーパレット：信頼感のある濃紺＋ブルーアクセントの企業向けトーン */
+/* 青緑を基調にした、落ち着いた事業向け配色 */
 :root {
-  --background: #f7f8fb;
-  --foreground: #0f172a;
-  --muted: #475569;
-  --accent: #2563eb;
-  --accent-dark: #1e40af;
+  --background: #f5faf9;
+  --foreground: #123332;
+  --muted: #526d6b;
+  --accent: #0f8b8d;
+  --accent-dark: #0a686a;
+  --accent-soft: #e1f3f0;
   --card: #ffffff;
-  --border: #e2e8f0;
-  --ink: #0b1220;
+  --border: #d9e8e5;
+  --ink: #0b292a;
 }
 
 @theme inline {
@@ -18,6 +19,7 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-dark: var(--accent-dark);
+  --color-accent-soft: var(--accent-soft);
   --color-card: var(--card);
   --color-border: var(--border);
   --color-ink: var(--ink);
@@ -37,62 +39,49 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* セクションの基準スクロール位置（固定ヘッダー分のオフセット） */
 section[id] {
   scroll-margin-top: 5rem;
 }
 
-/* ===== 装飾・アニメーション ===== */
-
-/* グラデーションのにじむ光（ヒーロー背景の blob） */
-@keyframes blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -40px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
-}
-.animate-blob { animation: blob 14s ease-in-out infinite; }
-
-/* ゆっくり上下に漂う */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
-.animate-float { animation: float 6s ease-in-out infinite; }
-
-/* グラデーション文字のアニメーション */
 @keyframes shine {
   to { background-position: 200% center; }
 }
+
 .text-gradient {
-  background: linear-gradient(100deg, #60a5fa, #818cf8, #38bdf8, #60a5fa);
+  background: linear-gradient(100deg, #7dd3c7, #5eead4, #99f6e4, #7dd3c7);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shine 6s linear infinite;
+  animation: shine 7s linear infinite;
 }
 
-/* キーワードを横に流すマーキー */
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
 .animate-marquee {
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 
-/* ドットグリッドの背景 */
 .dot-grid {
-  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-image: radial-gradient(rgba(153, 246, 228, 0.22) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* 動きを抑える設定のユーザーにはアニメーションを止める */
+::selection {
+  background: #b9e9e3;
+  color: #123332;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-blob,
-  .animate-float,
   .text-gradient,
   .animate-marquee {
     animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }

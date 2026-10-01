@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 
 const navItems = [
-  { href: "#services", label: "研修メニュー" },
-  { href: "#skills", label: "スキル" },
-  { href: "#works", label: "実績" },
-  { href: "#contact", label: "お問い合わせ" },
+  { href: "#about", label: "プロフィール" },
+  { href: "#services", label: "できること" },
+  { href: "#works", label: "開発実績" },
+  { href: "#experience", label: "経験" },
+  { href: "#skills", label: "技術" },
 ];
 
 export default function Header() {
@@ -24,11 +25,11 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-border bg-background/85 backdrop-blur-md"
+          ? "border-b border-border bg-background/90 shadow-sm backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <a
           href="#top"
           className={`font-bold tracking-tight transition-colors ${
@@ -37,9 +38,10 @@ export default function Header() {
         >
           {site.name}
         </a>
+
         <nav
-          className={`hidden items-center gap-7 text-sm font-medium md:flex ${
-            scrolled ? "text-muted" : "text-slate-300"
+          className={`hidden items-center gap-6 text-sm font-medium lg:flex ${
+            scrolled ? "text-muted" : "text-teal-50/70"
           }`}
         >
           {navItems.map((item) => (
@@ -52,11 +54,12 @@ export default function Header() {
             </a>
           ))}
         </nav>
+
         <a
           href="#contact"
-          className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-blue-500"
+          className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-teal-500"
         >
-          ご相談
+          お問い合わせ
         </a>
       </div>
     </header>
