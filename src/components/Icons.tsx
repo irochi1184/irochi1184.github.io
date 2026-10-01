@@ -1,6 +1,5 @@
 import type { SVGProps } from "react";
 
-// 研修カードなどで使うラインアイコン群。currentColor で着色する。
 const base = {
   width: 28,
   height: 28,
@@ -13,7 +12,6 @@ const base = {
 };
 
 function Java(p: SVGProps<SVGSVGElement>) {
-  // コーヒーカップ（Java の象徴）
   return (
     <svg {...base} {...p}>
       <path d="M5 9h11v5a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9Z" />
@@ -25,7 +23,6 @@ function Java(p: SVGProps<SVGSVGElement>) {
 }
 
 function Web(p: SVGProps<SVGSVGElement>) {
-  // 重なるレイヤー（Web アプリ）
   return (
     <svg {...base} {...p}>
       <path d="M12 3 3 8l9 5 9-5-9-5Z" />
@@ -36,7 +33,6 @@ function Web(p: SVGProps<SVGSVGElement>) {
 }
 
 function Php(p: SVGProps<SVGSVGElement>) {
-  // コード括弧
   return (
     <svg {...base} {...p}>
       <path d="m8 7-5 5 5 5" />
@@ -47,7 +43,6 @@ function Php(p: SVGProps<SVGSVGElement>) {
 }
 
 function Basics(p: SVGProps<SVGSVGElement>) {
-  // 電球（基礎・ひらめき）
   return (
     <svg {...base} {...p}>
       <path d="M9 18h6" />
@@ -58,7 +53,6 @@ function Basics(p: SVGProps<SVGSVGElement>) {
 }
 
 function Infra(p: SVGProps<SVGSVGElement>) {
-  // クラウド
   return (
     <svg {...base} {...p}>
       <path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 9.5a3.5 3.5 0 0 1-.5 8.5H7Z" />
@@ -68,7 +62,6 @@ function Infra(p: SVGProps<SVGSVGElement>) {
 }
 
 function Db(p: SVGProps<SVGSVGElement>) {
-  // データベース
   return (
     <svg {...base} {...p}>
       <ellipse cx="12" cy="5" rx="7" ry="3" />
@@ -78,10 +71,38 @@ function Db(p: SVGProps<SVGSVGElement>) {
   );
 }
 
+function Ai(p: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...p}>
+      <rect x="5" y="6" width="14" height="12" rx="3" />
+      <path d="M9 11h.01M15 11h.01M9 15c1.4 1 4.6 1 6 0" />
+      <path d="M12 3v3M8 3h8M3 10h2M19 10h2" />
+    </svg>
+  );
+}
+
+function Mobile(p: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...p}>
+      <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+      <path d="M10 5h4M11 18.5h2" />
+    </svg>
+  );
+}
+
 export const serviceIcons: Record<
   string,
   (p: SVGProps<SVGSVGElement>) => React.JSX.Element
-> = { java: Java, web: Web, php: Php, basics: Basics, infra: Infra, db: Db };
+> = {
+  java: Java,
+  web: Web,
+  php: Php,
+  basics: Basics,
+  infra: Infra,
+  db: Db,
+  ai: Ai,
+  mobile: Mobile,
+};
 
 export function GithubIcon(p: SVGProps<SVGSVGElement>) {
   return (

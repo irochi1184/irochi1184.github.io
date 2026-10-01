@@ -4,41 +4,51 @@ import { motion } from "motion/react";
 import { site, stats, marquee } from "@/data/site";
 import { ArrowIcon } from "./Icons";
 
+const currentWork = [
+  "企業向けの新人・IT研修",
+  "Java / Web開発 / クラウド",
+  "生成AIの基礎・業務活用",
+  "SwiftUIでのiOSアプリ開発",
+];
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink text-white">
-      {/* 背景：にじむ光の blob */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="animate-blob absolute -left-20 -top-24 h-80 w-80 rounded-full bg-blue-600/40 blur-3xl" />
-        <div className="animate-blob absolute right-0 top-20 h-96 w-96 rounded-full bg-indigo-500/30 blur-3xl [animation-delay:-4s]" />
-        <div className="animate-blob absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl [animation-delay:-8s]" />
+        <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-teal-500/20 blur-3xl" />
+        <div className="absolute right-0 top-24 h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl" />
       </div>
-      {/* 背景：ドットグリッド */}
-      <div aria-hidden className="dot-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      <div
+        aria-hidden
+        className="dot-grid pointer-events-none absolute inset-0 opacity-25 [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]"
+      />
 
-      <div className="relative mx-auto grid max-w-5xl items-center gap-12 px-5 py-24 sm:py-32 lg:grid-cols-[1.1fr_0.9fr]">
-        {/* 左：テキスト */}
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-28 sm:pb-24 sm:pt-32 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
           <motion.span
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-blue-200 backdrop-blur"
+            transition={{ duration: 0.45 }}
+            className="inline-flex items-center gap-2 rounded-full border border-teal-200/15 bg-white/5 px-4 py-2 text-xs font-semibold text-teal-100"
           >
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-            個人事業主 / 新人研修講師
+            <span className="h-1.5 w-1.5 rounded-full bg-teal-300" />
+            IT研修講師 / エンジニア / iOSアプリ開発
           </motion.span>
 
-          <h1 className="mt-6 text-4xl font-black leading-[1.15] tracking-tight sm:text-6xl">
-            {site.tagline.map((line, i) => (
+          <h1 className="mt-7 text-4xl font-black leading-[1.18] tracking-tight sm:text-6xl">
+            {site.tagline.map((line, index) => (
               <motion.span
                 key={line}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                className="block"
+                transition={{
+                  duration: 0.55,
+                  delay: 0.08 + index * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className={`block ${index === 1 ? "text-gradient" : ""}`}
               >
-                {i === 1 ? <span className="text-gradient">{line}</span> : line}
+                {line}
               </motion.span>
             ))}
           </h1>
@@ -46,104 +56,85 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-6 max-w-md text-base leading-relaxed text-slate-300"
+            transition={{ duration: 0.55, delay: 0.42 }}
+            className="mt-7 max-w-xl text-[15px] leading-8 text-teal-50/70 sm:text-base"
           >
             {site.lead}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.62 }}
+            transition={{ duration: 0.55, delay: 0.52 }}
             className="mt-8 flex flex-wrap gap-3"
           >
             <a
-              href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-900/40 transition-all hover:bg-blue-500 hover:shadow-xl"
+              href="#works"
+              className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-bold text-white shadow-lg shadow-black/10 transition-all hover:bg-teal-500"
             >
-              研修のご相談
+              開発実績を見る
               <ArrowIcon className="transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href="#services"
-              className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
+              className="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
             >
-              研修メニュー
+              できることを見る
             </a>
           </motion.div>
 
           <motion.dl
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-12 grid max-w-md grid-cols-3 gap-4 border-t border-white/10 pt-7"
+            transition={{ duration: 0.55, delay: 0.68 }}
+            className="mt-12 grid max-w-2xl gap-5 border-t border-white/10 pt-7 sm:grid-cols-3"
           >
-            {stats.map((s) => (
-              <div key={s.label}>
-                <dt className="text-xl font-black sm:text-2xl">{s.value}</dt>
-                <dd className="mt-1 text-xs text-slate-400">{s.label}</dd>
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <dt className="text-xl font-black text-white">{stat.value}</dt>
+                <dd className="mt-1 text-xs leading-5 text-teal-50/55">{stat.label}</dd>
               </div>
             ))}
           </motion.dl>
         </div>
 
-        {/* 右：浮遊するコードウィンドウ（ビジュアル要素） */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="relative hidden lg:block"
+        <motion.aside
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+          className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-2xl backdrop-blur-sm sm:p-8"
         >
-          <CodeCard />
-          {/* 飾りの幾何学シェイプ */}
-          <div className="animate-float absolute -right-6 -top-6 h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-500 opacity-80 shadow-xl [animation-delay:-2s]" />
-          <div className="animate-float absolute -bottom-5 -left-5 h-12 w-12 rounded-full border-2 border-sky-300/60" />
-        </motion.div>
+          <p className="text-xs font-bold tracking-[0.22em] text-teal-200">CURRENT WORK</p>
+          <h2 className="mt-3 text-xl font-bold">現在取り組んでいること</h2>
+          <div className="mt-6 space-y-3">
+            {currentWork.map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-3 rounded-2xl border border-white/8 bg-black/10 px-4 py-3.5"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-teal-400/15 text-teal-200">
+                  <span className="h-1.5 w-1.5 rounded-full bg-teal-300" />
+                </span>
+                <span className="text-sm font-medium text-teal-50/85">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs leading-6 text-teal-50/50">
+            研修で教える内容だけでなく、自分でも開発・公開まで行いながら技術を更新しています。
+          </p>
+        </motion.aside>
       </div>
 
-      {/* キーワードのマーキー */}
-      <div className="relative border-t border-white/10 py-5">
-        <div className="flex w-max animate-marquee gap-10 whitespace-nowrap text-sm font-semibold text-slate-500">
-          {[...marquee, ...marquee].map((k, i) => (
-            <span key={i} className="flex items-center gap-10">
-              {k}
-              <span className="text-blue-500/50">/</span>
+      <div className="relative border-t border-white/10 py-4">
+        <div className="flex w-max animate-marquee gap-9 whitespace-nowrap text-xs font-semibold text-teal-50/35">
+          {[...marquee, ...marquee].map((keyword, index) => (
+            <span key={index} className="flex items-center gap-9">
+              {keyword}
+              <span className="text-teal-400/50">/</span>
             </span>
           ))}
         </div>
       </div>
     </section>
-  );
-}
-
-// 装飾用の擬似コードウィンドウ
-function CodeCard() {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-slate-900/70 shadow-2xl backdrop-blur">
-      <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-        <span className="h-3 w-3 rounded-full bg-red-400/80" />
-        <span className="h-3 w-3 rounded-full bg-amber-400/80" />
-        <span className="h-3 w-3 rounded-full bg-emerald-400/80" />
-        <span className="ml-2 text-xs text-slate-500">Training.java</span>
-      </div>
-      <pre className="overflow-hidden p-5 text-[13px] leading-6">
-        <code>
-          <span className="text-pink-400">class</span>{" "}
-          <span className="text-sky-300">Newcomer</span> {"{"}
-          {"\n"} <span className="text-pink-400">void</span>{" "}
-          <span className="text-emerald-300">grow</span>() {"{"}
-          {"\n"} <span className="text-slate-500">{"// 基礎から、現場で戦力に"}</span>
-          {"\n"} learn(<span className="text-amber-300">&quot;Java&quot;</span>);
-          {"\n"} build(<span className="text-amber-300">&quot;WebApp&quot;</span>);
-          {"\n"} deploy(<span className="text-amber-300">&quot;AWS&quot;</span>);
-          {"\n"} <span className="text-pink-400">return</span>{" "}
-          <span className="text-sky-300">Engineer</span>;
-          {"\n"} {"}"}
-          {"\n"}
-          {"}"}
-        </code>
-      </pre>
-    </div>
   );
 }
