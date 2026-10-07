@@ -7,80 +7,16 @@ export const site = {
   name: "有田 健一郎",
   nameNoSpace: "有田健一郎",
   nameEn: "Kenichiro Arita",
-  role: "IT研修講師 / エンジニア / iOSアプリ開発",
-  tagline: ["教える仕事と、", "つくる仕事を、", "どちらも続けています。"],
-  lead: "企業向けのIT研修では、Java・Web開発・クラウド基礎などを担当しています。個人ではiOSアプリを企画・開発し、App Storeで公開しています。",
+  role: "IT・生成AI研修講師 / エンジニア",
+  tagline: ["学びを、", "使える力に。"],
+  lead: "IT研修で人を育て、自分でもプロダクトをつくる。教える経験と開発の実践をつなぎ、生成AIを仕事で使いこなすための学びへ広げています。",
   contact: {
     email: "",
     github: "https://github.com/irochi1184",
-    note: "IT研修の講師業務や開発に関するご相談がありましたら、GitHubからご連絡ください。",
+    x: "",
+    note: "新人向けIT研修、生成AI活用研修、教材・演習設計に取り組んでいます。公開しているコードや開発の活動は、GitHubでご覧いただけます。",
   },
 };
-
-export const marquee = [
-  "Java",
-  "Spring Boot",
-  "生成AI",
-  "AWS",
-  "Docker",
-  "MySQL",
-  "SwiftUI",
-  "WidgetKit",
-  "App Store",
-  "新人研修",
-];
-
-export const stats = [
-  { value: "2023 -", label: "IT研修講師として活動" },
-  { value: "App Store", label: "iOSアプリを公開・運用" },
-  { value: "Java / AI", label: "企業研修で担当" },
-];
-
-export const services = [
-  {
-    icon: "basics",
-    title: "企業向けIT研修",
-    badge: "主な業務",
-    description:
-      "新入社員や未経験の方を対象に、ITの基礎から開発演習まで担当しています。説明だけで終わらず、自分で手を動かして理解できる進め方を大切にしています。",
-    tags: ["新人研修", "演習支援", "コードレビュー"],
-  },
-  {
-    icon: "java",
-    title: "Java / Web開発研修",
-    description:
-      "Javaの基礎、オブジェクト指向、Spring Boot、MySQLを使ったWebアプリ開発まで指導しています。設計・実装・テストまで一連の流れを扱います。",
-    tags: ["Java", "Spring Boot", "MySQL"],
-  },
-  {
-    icon: "infra",
-    title: "クラウド・インフラ基礎",
-    description:
-      "Linux、Docker、AWS、ネットワークなど、開発者にも必要になる基盤分野を扱います。初学者がつまずきやすい部分をかみ砕いて説明します。",
-    tags: ["Linux", "Docker", "AWS"],
-  },
-  {
-    icon: "ai",
-    title: "生成AI活用研修",
-    description:
-      "生成AIの基本的な考え方から、業務での使い方、質問の組み立て方まで扱います。非エンジニアを含む受講者にも分かる言葉で進めます。",
-    tags: ["生成AI", "業務活用", "プロンプト"],
-  },
-  {
-    icon: "mobile",
-    title: "iOSアプリ開発",
-    description:
-      "SwiftUIを使って、企画・実装・App Store公開・改善まで自分で行っています。公開後の利用者の声も見ながら継続して更新しています。",
-    tags: ["SwiftUI", "WidgetKit", "App Store"],
-  },
-  {
-    icon: "web",
-    title: "開発・テスト支援",
-    description:
-      "業務向けWebシステムの実装や、テスト結果の集計・可視化、自動テストなども経験しています。必要に応じて調査から実装まで対応します。",
-    tags: ["Web開発", "自動テスト", "可視化"],
-  },
-];
 
 export const skillGroups = [
   {
@@ -149,4 +85,19 @@ export const careerHighlights = [
     description:
       "生成AIの基礎・業務活用を扱う研修や、要件定義から実装・テスト・成果発表まで行うシステム構築演習を担当しました。",
   },
+];
+
+
+// 取り組みの計画。提供済みの実績とは分けて掲載します。
+export const nextSteps = [
+  { phase: "01", status: "取り組み中", title: "実務から、研修を磨く。", description: "IT・生成AI研修の登壇を続け、受講者がつまずく場面や業務での使い方を教材・演習に反映。Claude Code / Codexを使った実践も深めています。" },
+  { phase: "02", status: "準備中", title: "生成AI研修を、自分の商品に。", description: "非エンジニア向けの業務活用を中心に、業務の棚卸し、プロンプト設計、情報管理、実践演習を組み合わせた法人向け研修を設計しています。" },
+  { phase: "03", status: "今後の展開", title: "学んだ先の、定着まで。", description: "研修後も業務で使い続けられるよう、効果測定と伴走支援へ広げていく計画です。教材づくりと個人開発も継続し、実践から学びを更新していきます。" },
+];
+
+
+export const offerings = [
+  { n: "01", icon: "basics", en: "IT EDUCATION", title: "基礎から、開発の全体像まで。", text: "新入社員・未経験者向けのIT研修を担当。Java、Web開発、データベース、クラウドをつなぎ、設計・実装・テスト・発表まで支援します。", tags: ["Java / Spring Boot", "SQL / MySQL", "Linux / Docker / AWS"], note: "演習支援・コードレビュー・設計書レビュー" },
+  { n: "02", icon: "ai", en: "GENERATIVE AI", title: "AIを、日々の仕事に近づける。", text: "非エンジニアにも伝わる言葉で、生成AIの基礎と業務活用を解説。質問の組み立て方や情報の扱い方を、手を動かす演習とともに伝えます。", tags: ["生成AIの基礎", "プロンプト設計", "業務活用"], note: "法人向けの研修商品・実践教材を準備中" },
+  { n: "03", icon: "mobile", en: "PRODUCT DEVELOPMENT", title: "自分でつくり、公開して育てる。", text: "SwiftUIによるiOSアプリを企画から公開・改善まで一貫して開発。Webシステムの実装やテストにも携わり、教える内容を実践で更新しています。", tags: ["SwiftUI / WidgetKit", "Webアプリ開発", "テスト / CI/CD"], note: "App Storeで2つのアプリを公開・運用" },
 ];

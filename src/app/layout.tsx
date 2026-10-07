@@ -10,8 +10,8 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap",
 });
 
-const titleText = `${site.name}（${site.nameEn}）| IT研修講師・エンジニア・iOSアプリ開発`;
-const descriptionText = `${site.nameNoSpace}（${site.name}）のポートフォリオ。企業向けIT研修でJava・Web開発・クラウド・生成AIを担当し、個人ではSwiftUIでiOSアプリを開発してApp Storeで公開しています。`;
+const titleText = `${site.name}（${site.nameEn}）| IT・生成AI研修講師 / エンジニア`;
+const descriptionText = `${site.nameNoSpace}（${site.name}）のポートフォリオ。新人向けIT研修、生成AIの業務活用研修、SwiftUIによるiOSアプリ開発。教える経験と開発の実践をつなぎ、法人向け生成AI研修の設計に取り組んでいます。`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${site.name}｜IT研修講師・エンジニア・iOSアプリ開発`,
+        alt: `${site.name}｜IT・生成AI研修講師 / エンジニア`,
       },
     ],
   },
@@ -75,9 +75,9 @@ const personJsonLd = {
   name: site.nameNoSpace,
   alternateName: [site.name, site.nameEn],
   url: site.url,
-  jobTitle: "IT研修講師 / エンジニア / iOSアプリ開発",
+  jobTitle: site.role,
   description: descriptionText,
-  sameAs: [site.contact.github].filter(Boolean),
+  sameAs: [site.contact.github, site.contact.x].filter(Boolean),
   knowsAbout: [
     "Java",
     "Spring Boot",

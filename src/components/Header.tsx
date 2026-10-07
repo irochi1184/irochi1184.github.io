@@ -1,67 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { site } from "@/data/site";
+import { ArrowIcon } from "./Icons";
 
-const navItems = [
-  { href: "#about", label: "プロフィール" },
-  { href: "#services", label: "できること" },
-  { href: "#works", label: "開発実績" },
-  { href: "#experience", label: "経験" },
-  { href: "#skills", label: "技術" },
+const links = [
+  ["#about", "私について"], ["#services", "できること"],
+  ["#works", "つくったもの"], ["#experience", "これまで"], ["#next", "これから"],
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  const [open, setOpen] = useState(false);
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-border bg-background/90 shadow-sm backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a
-          href="#top"
-          className={`font-bold tracking-tight transition-colors ${
-            scrolled ? "text-ink" : "text-white"
-          }`}
-        >
-          {site.name}
+    <header className="site-header">
+      <div className="container header-inner">
+        <a href="#top" className="wordmark" aria-label={`${site.name} トップへ`} onClick={() => setOpen(false)}>
+          <span className="brand-symbol" aria-hidden="true">a<span>.</span></span>
+          <span>{site.nameEn}<small>TEACH / BUILD / APPLY</small></span>
         </a>
-
-        <nav
-          className={`hidden items-center gap-6 text-sm font-medium lg:flex ${
-            scrolled ? "text-muted" : "text-teal-50/70"
-          }`}
-        >
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="transition-colors hover:text-accent"
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="desktop-nav" aria-label="メインナビゲーション">
+          {links.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
         </nav>
-
-        <a
-          href="#contact"
-          className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-teal-500"
-        >
-          お問い合わせ
-        </a>
+        <div className="header-actions">
+          <a href="#contact" className="header-contact">活動を見る <ArrowIcon aria-hidden="true" /></a>
+          <button type="button" className="menu-button" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "メニューを閉じる" : "メニューを開く"} onClick={() => setOpen(!open)}>
+            <span>{open ? "CLOSE" : "MENU"}</span><span aria-hidden="true">{open ? "−" : "+"}</span>
+          </button>
+        </div>
       </div>
+      <nav id="mobile-navigation" className="mobile-nav" aria-label="モバイルナビゲーション" hidden={!open}>
+        {links.map(([href, label]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}<ArrowIcon aria-hidden="true" /></a>)}
+      </nav>
     </header>
   );
 }
