@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
 
-const notoSansJP = Noto_Sans_JP({
-  variable: "--font-noto-sans-jp",
-  subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
-  display: "swap",
-});
-
-const titleText = `${site.name}（${site.nameEn}）| IT・生成AI研修講師 / エンジニア`;
-const descriptionText = `${site.nameNoSpace}（${site.name}）のポートフォリオ。新人向けIT研修、生成AIの業務活用研修、SwiftUIによるiOSアプリ開発。教える経験と開発の実践をつなぎ、法人向け生成AI研修の設計に取り組んでいます。`;
+const titleText = `${site.name}｜企業向けIT・生成AI研修と開発実績`;
+const descriptionText = `${site.nameNoSpace}のポートフォリオ。新入社員向けのWeb開発研修、生成AIの業務活用研修、システム構築演習での担当内容と、個人開発したiOSアプリを紹介します。`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -100,14 +92,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${notoSansJP.variable} h-full antialiased`}>
+    <html lang="ja">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
