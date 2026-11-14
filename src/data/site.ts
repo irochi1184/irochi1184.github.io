@@ -61,7 +61,7 @@ export const works = [
       "現在時刻を秒まで大きく表示する時計アプリです。全画面・横向き表示、ホーム画面とロック画面のウィジェット、プリセット切替、背景や書体のカスタマイズなどを実装しています。",
     tags: ["SwiftUI", "WidgetKit", "StoreKit"],
     visual: "clock",
-    image: "",
+    image: "/secondclock-icon.png",
     link: "https://apps.apple.com/jp/app/secondclock-%E7%A7%92%E3%81%BE%E3%81%A7%E8%A6%8B%E3%81%88%E3%82%8B%E6%99%82%E8%A8%88/id6806014208",
     linkLabel: "App Storeで見る",
   },

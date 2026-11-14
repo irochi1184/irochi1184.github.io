@@ -19,11 +19,23 @@ export default function Home() {
               <p className="role">新入社員・開発未経験者向け</p>
               <h3>新人IT研修</h3>
               <p>Javaとデータベースの基礎から、Webアプリを設計・実装する演習まで担当しています。演習では設計書とコードを確認し、受講者の疑問に答えながらテスト・成果発表まで支援します。</p>
+              <dl className="training-details">
+                <dt>演習例</dt>
+                <dd>備品の貸出を記録するWebアプリを作ります。備品名と借りた人を入力すると一覧に反映される画面をJavaで実装し、未入力のまま登録したときの動作もテストします。</dd>
+                <dt>受講後に目指すこと</dt>
+                <dd>簡単な業務要件を画面とデータベースの項目に落とし込み、登録機能を実装できます。期待した動作とテスト結果を照らし合わせ、修正した箇所を説明できます。</dd>
+              </dl>
             </article>
             <article className="training-card">
               <p className="role">業務で生成AIを使う方向け</p>
               <h3>生成AI活用研修</h3>
               <p>生成AIの基礎と業務での使い方を教えています。業務のどの場面で使うか、質問をどう組み立てるか、入力する情報をどう扱うかを、演習を通して伝えます。</p>
+              <dl className="training-details">
+                <dt>演習例</dt>
+                <dd>架空の会議メモから、担当者・期限・作業内容をまとめた一覧を作ります。生成AIに出力形式を指定し、メモと照合して、期限が決まっていない項目には「未定」と記します。</dd>
+                <dt>受講後に目指すこと</dt>
+                <dd>目的に合う指示を書き、入力してよい情報を選べます。回答を元の資料と照合し、抜けや推測を修正して、社内で共有できる下書きに整えられます。</dd>
+              </dl>
             </article>
           </div>
           <p id="next" className="training-note">現在は、非エンジニア向けの法人研修として、業務の棚卸しから始める独自のプログラムと実践教材を準備しています。</p>
@@ -49,11 +61,7 @@ export default function Home() {
             {works.map((work) => (
               <article key={work.title} className={`app-card ${work.visual === "clock" ? "clock" : "kakebo"}`}>
                 <div className="app-heading">
-                  <div className="app-mark" aria-hidden="true">
-                    {work.image
-                      ? <Image src={work.image} alt="" width={84} height={84} />
-                      : "12:48:06"}
-                </div>
+                  <Image className="app-icon" src={work.image} alt="" width={84} height={84} />
                   <h3 lang="en">{work.title}</h3>
                 </div>
                 <p>{work.description}</p>

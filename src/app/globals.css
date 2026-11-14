@@ -44,8 +44,6 @@ h2 { font-size: clamp(1.7rem, 2.8vw, 2.5rem); line-height: 1.5; }
 .app-card { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.55rem, 3vw, 2.7rem); }
 .kakebo { background: #e1eee6; }
 .clock { background: #203744; color: #f8fcfc; }
-.app-mark img { width: 84px; height: 84px; border-radius: 17px; }
-.app-mark { font: 350 clamp(2.5rem, 4.7vw, 4.4rem)/1.12 "Segoe UI", sans-serif; letter-spacing: -.035em; }
 .app-card h3 { font: 680 clamp(1.9rem, 3vw, 2.7rem)/1.35 "Segoe UI", sans-serif; margin-block: .65rem .3rem; }
 .app-card p { max-width: 34em; }
 .tags { display: flex; flex-wrap: wrap; gap: .4rem 1rem; list-style: none; padding: 0; margin: 1.2rem 0; font: 600 .87rem/1.6 "Segoe UI", sans-serif; }
@@ -78,9 +76,12 @@ h2 { font-size: clamp(1.7rem, 2.8vw, 2.5rem); line-height: 1.5; }
 @media(prefers-reduced-motion: reduce) {
  html { scroll-behavior: auto; }
 }
-.app-heading { margin-bottom: 1rem; }
-.kakebo .app-heading { display: flex; align-items: center; gap: 1.2rem; }
-.app-mark img { display: block; }
+.app-heading { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.2rem; margin-bottom: 1rem; }
+.app-heading h3 { margin: 0; }
+.app-icon { display: block; width: 84px; height: 84px; border-radius: 17px; }
+.training-details { margin-top: 1.2rem; }
+.training-details dt { color: var(--teal); font-weight: 700; margin-top: 1rem; }
+.training-details dd { margin-top: .25rem; }
 .training-note { color: var(--muted); border-left: 3px solid #9fbcb2; padding-left: 1rem; margin-top: 1rem; }
 .period { color: var(--teal); font-weight: 700; font-variant-numeric: tabular-nums; }
 
