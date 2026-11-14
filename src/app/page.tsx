@@ -11,6 +11,22 @@ export default function Home() {
       <Header />
       <main id="main-content" tabIndex={-1}>
         <Hero />
+        <section id="services" className="wrap section" aria-labelledby="training-title">
+          <div className="section-head"><h2 id="training-title">法人向け研修事業</h2></div>
+          <div className="training-grid">
+            <article className="training-card">
+              <p className="role">新入社員・開発未経験者向け</p>
+              <h3>新人IT研修</h3>
+              <p>Javaとデータベースの基礎から、Webアプリを設計・実装する演習まで担当しています。演習では設計書とコードを確認し、受講者の疑問に答えながらテスト・成果発表まで支援します。</p>
+            </article>
+            <article className="training-card">
+              <p className="role">業務で生成AIを使う方向け</p>
+              <h3>生成AI活用研修</h3>
+              <p>生成AIの基礎と業務での使い方を教えています。業務のどの場面で使うか、質問をどう組み立てるか、入力する情報をどう扱うかを、演習を通して伝えます。</p>
+            </article>
+          </div>
+          <p id="next" className="training-note">現在は、非エンジニア向けの法人研修として、業務の棚卸しから始める独自のプログラムと実践教材を準備しています。</p>
+        </section>
         <section id="works" className="wrap section" aria-labelledby="works-title">
           <div className="section-head">
             <h2 id="works-title">公開アプリ</h2>
@@ -35,22 +51,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </section>
-        <section id="services" className="wrap section" aria-labelledby="training-title">
-          <div className="section-head"><h2 id="training-title">法人向け研修事業</h2></div>
-          <div className="training-grid">
-            <article className="training-card">
-              <p className="role">新入社員・開発未経験者向け</p>
-              <h3>新人IT研修</h3>
-              <p>Javaとデータベースの基礎から、Webアプリを設計・実装する演習まで担当しています。演習では設計書とコードを確認し、受講者の疑問に答えながらテスト・成果発表まで支援します。</p>
-            </article>
-            <article className="training-card">
-              <p className="role">業務で生成AIを使う方向け</p>
-              <h3>生成AI活用研修</h3>
-              <p>生成AIの基礎と業務での使い方を教えています。業務のどの場面で使うか、質問をどう組み立てるか、入力する情報をどう扱うかを、演習を通して伝えます。</p>
-            </article>
-          </div>
-          <p id="next" className="training-note">現在は、非エンジニア向けの法人研修として、業務の棚卸しから始める独自のプログラムと実践教材を準備しています。</p>
         </section>
         <section id="experience" className="wrap section" aria-labelledby="history-title">
           <div className="section-head"><h2 id="history-title">経歴と担当業務</h2></div>
