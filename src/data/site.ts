@@ -11,7 +11,8 @@ export const site = {
   tagline: ["学びを、", "使える力に。"],
   lead: "IT研修で人を育て、自分でもプロダクトをつくる。教える経験と開発の実践をつなぎ、生成AIを仕事で使いこなすための学びへ広げています。",
   contact: {
-    email: "",
+    email: "ken.office.arita@gmail.com",
+    trainingForm: "",
     github: "https://github.com/irochi1184",
     x: "",
     note: "新人向けIT研修、生成AI活用研修、教材・演習設計に取り組んでいます。公開しているコードや開発の活動は、GitHubでご覧いただけます。",
@@ -101,3 +102,14 @@ export const offerings = [
   { n: "02", icon: "ai", en: "GENERATIVE AI", title: "AIを、日々の仕事に近づける。", text: "非エンジニアにも伝わる言葉で、生成AIの基礎と業務活用を解説。質問の組み立て方や情報の扱い方を、手を動かす演習とともに伝えます。", tags: ["生成AIの基礎", "プロンプト設計", "業務活用"], note: "法人向けの研修商品・実践教材を準備中" },
   { n: "03", icon: "mobile", en: "PRODUCT DEVELOPMENT", title: "自分でつくり、公開して育てる。", text: "SwiftUIによるiOSアプリを企画から公開・改善まで一貫して開発。Webシステムの実装やテストにも携わり、教える内容を実践で更新しています。", tags: ["SwiftUI / WidgetKit", "Webアプリ開発", "テスト / CI/CD"], note: "App Storeで2つのアプリを公開・運用" },
 ];
+
+export function trainingInquiryLink() {
+  if (site.contact.trainingForm) return site.contact.trainingForm;
+  if (!site.contact.email) return null;
+
+  const subject = encodeURIComponent("法人研修の相談");
+  const body = encodeURIComponent(
+    "会社名・ご担当者名：\n検討している研修：\n受講対象者・人数：\n希望時期：\nご相談内容：\n"
+  );
+  return `mailto:${site.contact.email}?subject=${subject}&body=${body}`;
+}

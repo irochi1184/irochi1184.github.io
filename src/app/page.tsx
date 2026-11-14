@@ -2,9 +2,10 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { careerHighlights, skillGroups, works } from "@/data/site";
+import { careerHighlights, skillGroups, site, trainingInquiryLink, works } from "@/data/site";
 
 export default function Home() {
+  const inquiry = trainingInquiryLink();
   return (
     <>
       <a className="skip-link" href="#main-content">本文へ移動</a>
@@ -26,6 +27,18 @@ export default function Home() {
             </article>
           </div>
           <p id="next" className="training-note">現在は、非エンジニア向けの法人研修として、業務の棚卸しから始める独自のプログラムと実践教材を準備しています。</p>
+          {inquiry && (
+            <aside id="training-contact" className="training-contact" aria-labelledby="inquiry-heading">
+              <div>
+                <h3 id="inquiry-heading">研修のご相談</h3>
+                <p>受講される方や、研修で身につけてほしいことをお聞かせください。人数や時期は、決まっている範囲でお知らせください。</p>
+              </div>
+              <div className="inquiry-action">
+                <a className="primary" href={inquiry}>{site.contact.trainingForm ? "相談フォームを開く" : "メールで相談する"} <span aria-hidden="true">↗</span></a>
+                {!site.contact.trainingForm && <small>{site.contact.email}</small>}
+              </div>
+            </aside>
+          )}
         </section>
         <section id="works" className="wrap section" aria-labelledby="works-title">
           <div className="section-head">

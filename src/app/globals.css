@@ -83,3 +83,18 @@ h2 { font-size: clamp(1.7rem, 2.8vw, 2.5rem); line-height: 1.5; }
 .app-mark img { display: block; }
 .training-note { color: var(--muted); border-left: 3px solid #9fbcb2; padding-left: 1rem; margin-top: 1rem; }
 .period { color: var(--teal); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.training-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+  margin-top: 2rem;
+  background: #e5f0ec;
+}
+.training-contact > div:first-child { flex: 1 1 24rem; }
+.training-contact h3 { font-size: 1.4rem; }
+.training-contact p { max-width: 39em; margin-top: .35rem; }
+.inquiry-action small { display: block; margin-top: .45rem; color: var(--muted); overflow-wrap: anywhere; }
